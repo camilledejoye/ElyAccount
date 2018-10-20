@@ -1,0 +1,33 @@
+{
+    "name": "ely/account-manager",
+    "description": "Simple exercise",
+    "type": "project",
+    "authors": [
+        {
+            "name": "Camille Dejoye",
+            "email": "camilledejoye@gmail.com"
+        }
+    ],
+    "require": {
+        "moneyphp/money": "^3.1"
+    },
+    "require-dev": {
+        "jakub-onderka/php-parallel-lint": "^1.0",
+        "jakub-onderka/php-console-highlighter": "^0.4.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "ElyAccount\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "ElyAccount\\Tests\\": "tests/"
+        }
+    },
+    "scripts": {
+        "lint": "vendor/bin/parallel-lint --colors --exclude app --exclude vendor --exclude var .",
+        "phpcs": "phpcs --colors --standard=PSR2 --ignore=vendor/,var/,.git/ .",
+        "test": "phpunit --colors=always"
+    }
+}
