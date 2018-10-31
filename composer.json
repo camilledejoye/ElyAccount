@@ -13,7 +13,8 @@
     },
     "require-dev": {
         "jakub-onderka/php-parallel-lint": "^1.0",
-        "jakub-onderka/php-console-highlighter": "^0.4.0"
+        "jakub-onderka/php-console-highlighter": "^0.4.0",
+        "phpunit/phpunit": "^7.4"
     },
     "autoload": {
         "psr-4": {
@@ -28,6 +29,11 @@
     "scripts": {
         "lint": "vendor/bin/parallel-lint --colors --exclude app --exclude vendor --exclude var .",
         "phpcs": "phpcs --colors --standard=PSR2 --ignore=vendor/,var/,.git/ .",
-        "test": "phpunit --colors=always"
+        "test": "phpunit --colors=always",
+        "check": [
+            "@test",
+            "@lint",
+            "@phpcs"
+        ]
     }
 }
