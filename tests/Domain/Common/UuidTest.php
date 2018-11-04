@@ -1,10 +1,10 @@
 <?php
 
-namespace ElyAccount\Tests\Domain\Identity;
+namespace ElyAccount\Tests\Domain\Common;
 
-use ElyAccount\Domain\Identity\Exception\InvalidUuidStringException;
-use ElyAccount\Domain\Identity\IdentifiesEntities;
-use ElyAccount\Domain\Identity\Uuid;
+use ElyAccount\Domain\Exception\InvalidUuidStringException;
+use ElyAccount\Domain\Common\IdentifiesEntities;
+use ElyAccount\Domain\Common\Uuid;
 use Ramsey\Uuid\Uuid as BaseUuid;
 use PHPUnit\Framework\TestCase;
 

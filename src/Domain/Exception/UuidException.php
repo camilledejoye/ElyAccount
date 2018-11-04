@@ -1,6 +1,8 @@
 <?php
 
-namespace ElyAccount\Domain\Identity\Exception;
+namespace ElyAccount\Domain\Exception;
+
+use ElyAccount\Domain\Exception\InvalidUuidStringException;
 
 /**
  * Factory for UUID related exceptions.

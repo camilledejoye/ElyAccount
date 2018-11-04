@@ -1,10 +1,12 @@
 <?php
 
-namespace ElyAccount\Domain\Identity;
+namespace ElyAccount\Domain\Common;
 
-use ElyAccount\Domain\Identity\Exception\InvalidUuidStringException;
-use ElyAccount\Domain\Identity\Exception\UuidException;
+use ElyAccount\Domain\Exception\InvalidUuidStringException;
+use ElyAccount\Domain\Exception\UuidException;
 use Ramsey\Uuid\Uuid as BaseUuid;
+use ElyAccount\Domain\Common\GeneratesIdentities;
+use ElyAccount\Domain\Common\IdentifiesEntities;
 
 class Uuid implements IdentifiesEntities, GeneratesIdentities
 {

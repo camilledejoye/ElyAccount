@@ -1,6 +1,6 @@
 <?php
 
-namespace ElyAccount\Domain\Identity;
+namespace ElyAccount\Domain\Common;
 
 interface GeneratesIdentities
 {

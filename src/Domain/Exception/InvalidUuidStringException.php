@@ -1,6 +1,6 @@
 <?php
 
-namespace ElyAccount\Domain\Identity\Exception;
+namespace ElyAccount\Domain\Exception;
 
 /**
  * Thrown when trying to use a string as an UUID when it is not.

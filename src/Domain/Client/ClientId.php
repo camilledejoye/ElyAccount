@@ -1,6 +1,8 @@
 <?php
 
-namespace ElyAccount\Domain\Identity;
+namespace ElyAccount\Domain\Client;
+
+use ElyAccount\Domain\Common\Uuid;
 
 /**
  * Represents the identity of a Client.
