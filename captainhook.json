@@ -1,0 +1,34 @@
+{
+    "commit-msg": {
+        "enabled": true,
+        "actions": [
+            {
+                "action": "\\SebastianFeldmann\\CaptainHook\\Hook\\Message\\Action\\Beams",
+                "options": []
+            }
+        ]
+    },
+    "pre-commit": {
+        "enabled": true,
+        "actions": [
+            {
+                "action": "\\SebastianFeldmann\\CaptainHook\\Hook\\Composer\\Action\\CheckLockFile",
+                "options": []
+            },
+            {
+                "action": "\\SebastianFeldmann\\CaptainHook\\Hook\\PHP\\Action\\Linting",
+                "options": []
+            },
+            {
+                "action": "phpunit --colors=always"
+            },
+            {
+                "action": "phpcs --colors --standard=PSR2 --ignore=vendor/,var/,.git/ ."
+            }
+        ]
+    },
+    "pre-push": {
+        "enabled": false,
+        "actions": []
+    }
+}

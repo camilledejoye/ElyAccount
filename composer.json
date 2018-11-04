@@ -14,7 +14,8 @@
     "require-dev": {
         "jakub-onderka/php-parallel-lint": "^1.0",
         "jakub-onderka/php-console-highlighter": "^0.4.0",
-        "phpunit/phpunit": "^7.4"
+        "phpunit/phpunit": "^7.4",
+        "sebastianfeldmann/captainhook": "^2.1"
     },
     "autoload": {
         "psr-4": {
@@ -34,6 +35,7 @@
             "@test",
             "@lint",
             "@phpcs"
-        ]
+        ],
+        "post-install-cmd": "\\SebastianFeldmann\\CaptainHook\\Composer\\Cmd::install"
     }
 }
