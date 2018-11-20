@@ -2,7 +2,7 @@
 
 namespace ElyAccount\Domain\Client;
 
-use ElyAccount\Domain\Common\Uuid;
+use ddd\Identity\Uuid;
 
 /**
  * Represents the identity of a Client.

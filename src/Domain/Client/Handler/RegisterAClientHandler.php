@@ -7,7 +7,7 @@ use ElyAccount\Domain\Command\BasicCommandHandler;
 use ElyAccount\Domain\Command\Command;
 use ElyAccount\Domain\Client\Client;
 use ElyAccount\Domain\Command\HandlesCommand;
-use ElyAccount\Domain\Repository\ClientRepository;
+use ElyAccount\Domain\Client\ClientRepository;
 
 final class RegisterAClientHandler implements HandlesCommand
 {

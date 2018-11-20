@@ -7,7 +7,7 @@ use ElyAccount\Domain\Client\Handler\RegisterAClientHandler;
 use ElyAccount\Domain\Client\ClientName;
 use ElyAccount\Domain\Client\ClientId;
 use ElyAccount\Domain\Client\Client;
-use ElyAccount\Domain\Repository\ClientRepository;
+use ElyAccount\Domain\Client\ClientRepository;
 use PHPUnit\Framework\TestCase;
 
 class RegisterAClientHandlerTest extends TestCase
@@ -26,7 +26,7 @@ class RegisterAClientHandlerTest extends TestCase
 
         $clientRepository->expects($this->once())
             ->method('manage')
-            ->with($this->equalTo(new Client($clientId, $name)));
+            ->with($this->equalTo(Client::signUp($clientId, $name)));
 
         $sut->handle($command);
     }

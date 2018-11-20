@@ -2,21 +2,27 @@
 
 namespace ElyAccount\Domain\Client;
 
+use ElyAccount\Domain\Client\Event\ClientHasSignedUp;
 use ElyAccount\Domain\Common\FirstName;
 use ElyAccount\Domain\Common\FullName;
 use ElyAccount\Domain\Common\LastName;
 use ElyAccount\Domain\Common\Person;
 use ElyAccount\Domain\Client\ClientName;
 use ElyAccount\Domain\Client\ClientId;
-use ElyAccount\Domain\Common\Entity;
+use ddd\Aggregate\AggregateRoot;
+use ddd\Aggregate\BasicAggregateRoot;
+use ddd\Event\AggregateChanges;
+use ddd\Event\AggregateHistory;
 
 /**
  * Represents an owner of a bank account.
  *
- * @see Entity
+ * @see AggregateRoot
  */
-class Client implements Entity, Person
+class Client implements AggregateRoot, Person
 {
+    use BasicAggregateRoot;
+
     /**
      * @var ClientId
      */
@@ -27,17 +33,41 @@ class Client implements Entity, Person
      */
     private $name;
 
+    /**
+     * Sign up a new client.
+     *
+     * @param ClientId $id
+     * @param ClientName $name
+     *
+     * @return self
+     */
     public static function signUp(ClientId $id, ClientName $name)
     {
-        return new self($id, $name);
+        $client = new self($id);
+
+        $client->recordThat(ClientHasSignedUp::byName($id, $name));
+
+        return $client;
     }
 
     /**
      * {@inheritDoc}
+     *
+     * @return self
+     */
+    public static function reconstituteFrom(AggregateHistory $history)
+    {
+        return BasicAggregateRoot::doReconstituteFrom($history);
+    }
+
+    /**
+     * {@inheritDoc}
+     *
+     * @return ClientId
      */
     public function id()
     {
-        throw new \RuntimeException('Not yet implemented !');
+        return $this->id;
     }
 
     /**
@@ -45,7 +75,7 @@ class Client implements Entity, Person
      */
     public function lastName(): LastName
     {
-        throw new \RuntimeException('Not yet implemented !');
+        return $this->name->lastName();
     }
 
     /**
@@ -53,15 +83,17 @@ class Client implements Entity, Person
      */
     public function firstName(): FirstName
     {
-        throw new \RuntimeException('Not yet implemented !');
+        return $this->name->firstName();
     }
 
     /**
      * {@inheritDoc}
+     *
+     * @return ClientName
      */
     public function fullName(): FullName
     {
-        throw new \RuntimeException('Not yet implemented !');
+        return $this->name;
     }
 
     /**
@@ -76,11 +108,15 @@ class Client implements Entity, Person
      * Initializes a client.
      *
      * @param ClientId $id
-     * @param ClientName $name
      */
-    public function __construct(ClientId $id, ClientName $name)
+    private function __construct(ClientId $id)
     {
-        $this->id   = $id;
-        $this->name = $name;
+        $this->id = $id;
+        $this->pendingEvents = AggregateChanges::createFor($id);
+    }
+
+    protected function onClientHasSignedUp(ClientHasSignedUp $event): void
+    {
+        $this->name = $event->name();
     }
 }

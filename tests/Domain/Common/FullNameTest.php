@@ -13,7 +13,7 @@ class FullNameTest extends TestCase
 {
     const LASTNAME  = 'Remi';
     const FIRSTNAME = 'Alexis';
-    const FULLNAME  = self::LASTNAME . ' ' . self::FIRSTNAME;
+    const FULLNAME  = self::FIRSTNAME . ' ' . self::LASTNAME;
 
     /**
      * @var PersonName

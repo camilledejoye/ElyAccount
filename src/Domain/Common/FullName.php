@@ -76,7 +76,7 @@ class FullName
      */
     public function toString(): string
     {
-        return sprintf('%s %s', $this->lastName, $this->firstName);
+        return sprintf('%s %s', $this->firstName, $this->lastName);
     }
 
     /**
