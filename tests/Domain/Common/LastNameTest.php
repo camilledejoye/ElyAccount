@@ -12,13 +12,24 @@ class LastNameTest extends TestCase
 
     /**
      * @test
+     * @dataProvider provideEmptyLastNames
      */
-    public function shouldNotAllowToCreateAnEmptyLastName()
+    public function shouldNotAllowToCreateAnEmptyLastName(string $emptyLastName)
     {
         $this->expectException(EmptyLastNameException::class);
         $this->expectExceptionMessage('A last name can\'t be empty.');
 
-        LastName::fromString('');
+        LastName::fromString($emptyLastName);
+    }
+
+    public function provideEmptyLastNames(): array
+    {
+        return [
+            'empty strings' => [''],
+            'spaces' => ['   '],
+            'tabulations' => ['		'],
+            'mixed of spaces and tabulations' => [' 	  '],
+        ];
     }
 
     /**

@@ -9,7 +9,7 @@ use ElyAccount\Domain\Common\Exception\EmptyLastNameException;
  *
  * @final
  */
-final class LastName
+final class LastName implements Name
 {
     /**
      * @var string
@@ -27,7 +27,7 @@ final class LastName
      */
     public static function fromString(string $lastName): self
     {
-        return new self($lastName);
+        return new self(trim($lastName));
     }
 
     /**

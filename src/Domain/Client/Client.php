@@ -4,7 +4,7 @@ namespace ElyAccount\Domain\Client;
 
 use ElyAccount\Domain\Client\Event\ClientHasSignedUp;
 use ElyAccount\Domain\Common\FirstName;
-use ElyAccount\Domain\Common\FullName;
+use ElyAccount\Domain\Common\Name;
 use ElyAccount\Domain\Common\LastName;
 use ElyAccount\Domain\Common\Person;
 use ElyAccount\Domain\Client\ClientName;
@@ -91,7 +91,7 @@ class Client implements AggregateRoot, Person
      *
      * @return ClientName
      */
-    public function fullName(): FullName
+    public function name(): Name
     {
         return $this->name;
     }
@@ -101,7 +101,7 @@ class Client implements AggregateRoot, Person
      */
     public function __toString(): string
     {
-        return $this->name->toString();
+        return (string) $this->name;
     }
 
     /**
