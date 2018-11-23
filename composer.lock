@@ -12,12 +12,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/elythyr/ddd.git",
-                "reference": "d1b70f153c497930be6dcc697dc6ad0b0c3ba811"
+                "reference": "a3b762f45bd627aec55c9501f4df94e92d0528aa"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/elythyr/ddd/zipball/d1b70f153c497930be6dcc697dc6ad0b0c3ba811",
-                "reference": "d1b70f153c497930be6dcc697dc6ad0b0c3ba811",
+                "url": "https://api.github.com/repos/elythyr/ddd/zipball/a3b762f45bd627aec55c9501f4df94e92d0528aa",
+                "reference": "a3b762f45bd627aec55c9501f4df94e92d0528aa",
                 "shasum": ""
             },
             "require": {
@@ -44,7 +44,7 @@
                 }
             ],
             "description": "Generic package for DDD programming",
-            "time": "2018-11-18T19:25:23+00:00"
+            "time": "2018-11-23T20:51:28+00:00"
         },
         {
             "name": "moneyphp/money",

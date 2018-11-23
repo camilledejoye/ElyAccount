@@ -2,9 +2,9 @@
 
 namespace ElyAccount\Domain\Client\Event;
 
-use DateTimeImmutable;
 use ElyAccount\Domain\Client\ClientId;
 use ElyAccount\Domain\Client\ClientName;
+use ddd\Event\BasicDomainEvent;
 use ddd\Event\DomainEvent;
 
 /**
@@ -15,20 +15,12 @@ use ddd\Event\DomainEvent;
  */
 final class ClientHasSignedUp implements DomainEvent
 {
-    /**
-     * @var ClientId
-     */
-    private $aggregateId;
+    use BasicDomainEvent;
 
     /**
      * @var ClientName
      */
     private $name;
-
-    /**
-     * @var DateTimeImmutable
-     */
-    private $occuredOn;
 
     /**
      * Signs up a client by his name.
@@ -54,27 +46,14 @@ final class ClientHasSignedUp implements DomainEvent
     }
 
     /**
-     * {@inheritDoc}
-     */
-    public function occuredOn()
-    {
-        return $this->occuredOn;
-    }
-
-    /**
-     * {@inheritDoc}
+     * Initializes the event.
      *
-     * @return ClientId
+     * @param ClientId $aggregateId
+     * @param ClientName $name
      */
-    public function aggregateId()
-    {
-        return $this->aggregateId;
-    }
-
     protected function __construct(ClientId $aggregateId, ClientName $name)
     {
-        $this->aggregateId = $aggregateId;
+        $this->initializeTheEvent($aggregateId);
         $this->name = $name;
-        $this->occuredOn = new DateTimeImmutable();
     }
 }
