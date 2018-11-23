@@ -62,13 +62,6 @@ interface BankAccount
     public function number(): AccountNumber;
 
     /**
-     * Gets a string representig an account.
-     *
-     * @return string
-     */
-    public function toString(): string;
-
-    /**
      * The string representation of an account.
      *
      * @return string

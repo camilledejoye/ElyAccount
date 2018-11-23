@@ -2,18 +2,26 @@
 
 namespace ElyAccount\Domain\BankAccount;
 
+use ElyAccount\Domain\BankAccount\Event\AccountWasRenamed;
+use ElyAccount\Domain\BankAccount\Event\CheckingAccountWasOpen;
 use ElyAccount\Domain\BankAccount\Exception\InvalidAmountOperation;
 use ElyAccount\Domain\BankAccount\Exception\WrongCurrencyOperation;
 use Money\Currency;
 use Money\Money;
+use ddd\Aggregate\AggregateRoot;
+use ddd\Aggregate\BasicAggregateRoot;
+use ddd\Event\AggregateChanges;
+use ddd\Event\AggregateHistory;
 
 /**
  * A bank account that allows easy access to the funds.
  *
  * @see BankAccount
  */
-class CheckingAccount implements BankAccount
+class CheckingAccount implements BankAccount, AggregateRoot
 {
+    use BasicAggregateRoot;
+
     /**
      * @var AccountNumber
      */
@@ -44,7 +52,21 @@ class CheckingAccount implements BankAccount
      */
     public static function open(AccountNumber $number, Currency $currency): CheckingAccount
     {
-        return new self($number, $currency);
+        $account = new self($number);
+
+        $account->recordThat(CheckingAccountWasOpen::withCurrency($number, $currency));
+
+        return $account;
+    }
+
+    /**
+     * {@inheritDoc}
+     *
+     * @return self
+     */
+    public static function reconstituteFrom(AggregateHistory $history)
+    {
+        return BasicAggregateRoot::doReconstituteFrom($history);
     }
 
     /**
@@ -78,7 +100,7 @@ class CheckingAccount implements BankAccount
      */
     public function rename(AccountName $name): BankAccount
     {
-        $this->name = $name;
+        $this->recordThat(AccountWasRenamed::fromName($this->number(), $name));
 
         return $this;
     }
@@ -110,31 +132,20 @@ class CheckingAccount implements BankAccount
     /**
      * {@inheritDoc}
      */
-    public function toString(): string
-    {
-        return $this->name() ?: $this->number();
-    }
-
-    /**
-     * {@inheritDoc}
-     */
     public function __toString(): string
     {
-        return $this->toString();
+        return $this->name() ?: $this->number();
     }
 
     /**
      * Initialize an account.
      *
      * @param AccountNumber $number
-     * @param Currency $currency
      */
-    private function __construct(AccountNumber $number, Currency $currency)
+    private function __construct(AccountNumber $number)
     {
-        $this->number   = $number;
-        $this->name     = AccountName::fromString($number);
-        $this->balance  = new Money(0, $currency);
-        $this->currency = $currency;
+        $this->number = $number;
+        $this->pendingEvents = AggregateChanges::createFor($number);
     }
 
     /**
@@ -182,5 +193,17 @@ class CheckingAccount implements BankAccount
         if ($amount->isNegative() || '0' === $amount->getAmount()) {
             throw InvalidAmountOperation::becauseAnAmountMustBeGreaterThanZero($amount->getAmount());
         }
+    }
+
+    private function onCheckingAccountWasOpen(CheckingAccountWasOpen $event): void
+    {
+        $this->name     = AccountName::fromString($this->number());
+        $this->balance  = new Money(0, $event->currency());
+        $this->currency = $event->currency();
+    }
+
+    private function onAccountWasRenamed(AccountWasRenamed $event): void
+    {
+        $this->name = $event->name();
     }
 }
