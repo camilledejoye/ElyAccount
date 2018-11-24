@@ -3,6 +3,7 @@
 namespace ElyAccount\Domain\BankAccount\Event;
 
 use ElyAccount\Domain\BankAccount\AccountNumber;
+use ElyAccount\Domain\Client\ClientId;
 use Money\Currency;
 use ddd\Event\BasicDomainEvent;
 use ddd\Event\DomainEvent;
@@ -17,6 +18,11 @@ class CheckingAccountWasOpen implements DomainEvent
     private $currency;
 
     /**
+     * @var ClientId
+     */
+    private $ownerId;
+
+    /**
      * Opens a checking account with a given currency.
      *
      * @param AccountNumber $number
@@ -24,14 +30,29 @@ class CheckingAccountWasOpen implements DomainEvent
      *
      * @return self
      */
-    public static function withCurrency(AccountNumber $number, Currency $currency): self
+    public static function forAClient(ClientId $ownerId, AccountNumber $number, Currency $currency): self
     {
-        return new self($number, $currency);
+        return new self($ownerId, $number, $currency);
     }
 
+    /**
+     * Gets the currency of the account.
+     *
+     * @return Currency
+     */
     public function currency(): Currency
     {
         return $this->currency;
+    }
+
+    /**
+     * Gets the identity of the owner of the account.
+     *
+     * @return ClientId
+     */
+    public function ownerId(): ClientId
+    {
+        return $this->ownerId;
     }
 
     /**
@@ -40,9 +61,10 @@ class CheckingAccountWasOpen implements DomainEvent
      * @param AccountNumber $number
      * @param Currency $currency
      */
-    protected function __construct(AccountNumber $number, Currency $currency)
+    protected function __construct(ClientId $ownerId, AccountNumber $number, Currency $currency)
     {
         $this->initializeTheEvent($number);
         $this->currency = $currency;
+        $this->ownerId = $ownerId;
     }
 }

@@ -2,6 +2,7 @@
 
 namespace ElyAccount\Domain\BankAccount;
 
+use ElyAccount\Domain\Client\ClientId;
 use Money\Money;
 
 interface BankAccount
@@ -60,6 +61,15 @@ interface BankAccount
      * @return AccountNumber
      */
     public function number(): AccountNumber;
+
+    /**
+     * Checks, from his identity, if a client is the owner of an account.
+     *
+     * @param ClientId $clientId
+     *
+     * @return bool
+     */
+    public function isOwner(ClientId $clientId): bool;
 
     /**
      * The string representation of an account.

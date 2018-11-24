@@ -7,6 +7,7 @@ use ElyAccount\Domain\BankAccount\AccountNumber;
 use ElyAccount\Domain\BankAccount\CheckingAccount;
 use ElyAccount\Domain\BankAccount\Exception\InvalidAmountOperation;
 use ElyAccount\Domain\BankAccount\Exception\WrongCurrencyOperation;
+use ElyAccount\Domain\Client\ClientId;
 use Money\Currency;
 use Money\Money;
 use PHPUnit\Framework\TestCase;
@@ -22,6 +23,11 @@ class CheckingAccountTest extends TestCase
     private $sut;
 
     /**
+     * @var ClientId
+     */
+    private $ownerId;
+
+    /**
      * @var Currency
      */
     private $currency;
@@ -33,9 +39,14 @@ class CheckingAccountTest extends TestCase
 
     protected function setUp()
     {
+        $this->ownerId = $this->createAnOwnerId();
         $this->accountNumber = $this->createAnAccountNumber();
         $this->currency = $this->createEuroCurrency();
-        $this->sut = CheckingAccount::open($this->accountNumber, $this->currency);
+        $this->sut = CheckingAccount::open(
+            $this->accountNumber,
+            $this->currency,
+            $this->ownerId
+        );
     }
 
     /**
@@ -211,6 +222,19 @@ class CheckingAccountTest extends TestCase
         $this->assertEquals($name, (string) $this->sut);
     }
 
+    /**
+     * @test
+     */
+    public function shouldCheckIfAClientIsTheOwnerOfTheAccount()
+    {
+        $clientId = $this->createAnOwnerId();
+        $clientId->expects($this->once())
+            ->method('equals')
+            ->with($this->identicalTo($this->ownerId));
+
+        $this->sut->isOwner($clientId);
+    }
+
     private function createAnAccountNumber(): AccountNumber
     {
         return AccountNumber::generate();
@@ -236,5 +260,10 @@ class CheckingAccountTest extends TestCase
     private function createPoundCurrency(): Currency
     {
         return new Currency(self::BRITISH_POUND_CURRENCY);
+    }
+
+    private function createAnOwnerId(): ClientId
+    {
+        return $this->createMock(ClientId::class);
     }
 }

@@ -8,6 +8,7 @@ use ElyAccount\Domain\BankAccount\Event\DepositWasMade;
 use ElyAccount\Domain\BankAccount\Event\WithdrawalWasMade;
 use ElyAccount\Domain\BankAccount\Exception\InvalidAmountOperation;
 use ElyAccount\Domain\BankAccount\Exception\WrongCurrencyOperation;
+use ElyAccount\Domain\Client\ClientId;
 use Money\Currency;
 use Money\Money;
 use ddd\Aggregate\AggregateRoot;
@@ -28,6 +29,11 @@ class CheckingAccount implements BankAccount, AggregateRoot
      * @var AccountNumber
      */
     private $number;
+
+    /**
+     * @var ClientId
+     */
+    private $ownerId;
 
     /**
      * @var Currency
@@ -57,11 +63,11 @@ class CheckingAccount implements BankAccount, AggregateRoot
      *
      * @return CheckingAccount
      */
-    public static function open(AccountNumber $number, Currency $currency): CheckingAccount
+    public static function open(AccountNumber $number, Currency $currency, ClientId $ownerId): CheckingAccount
     {
         $account = new self($number);
 
-        $account->recordThat(CheckingAccountWasOpen::withCurrency($number, $currency));
+        $account->recordThat(CheckingAccountWasOpen::forAClient($ownerId, $number, $currency));
 
         return $account;
     }
@@ -139,6 +145,14 @@ class CheckingAccount implements BankAccount, AggregateRoot
     /**
      * {@inheritDoc}
      */
+    public function isOwner(ClientId $clientId): bool
+    {
+        return $clientId->equals($this->ownerId);
+    }
+
+    /**
+     * {@inheritDoc}
+     */
     public function __toString(): string
     {
         return $this->name() ?: $this->number();
@@ -188,6 +202,7 @@ class CheckingAccount implements BankAccount, AggregateRoot
 
     private function onCheckingAccountWasOpen(CheckingAccountWasOpen $event): void
     {
+        $this->ownerId  = $event->ownerId();
         $this->name     = AccountName::fromString($this->number());
         $this->balance  = new Money(0, $event->currency());
         $this->currency = $event->currency();

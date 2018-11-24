@@ -10,6 +10,6 @@ use ddd\Identity\Uuid;
  * @see Uuid
  * @final
  */
-final class ClientId extends Uuid
+class ClientId extends Uuid
 {
 }
