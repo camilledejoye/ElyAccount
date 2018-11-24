@@ -45,6 +45,11 @@ class CheckingAccount implements BankAccount, AggregateRoot
     private $balance;
 
     /**
+     * @var CheckRegister
+     */
+    private $register;
+
+    /**
      * Opens a checking account.
      *
      * @param AccountNumber $number
@@ -186,6 +191,7 @@ class CheckingAccount implements BankAccount, AggregateRoot
         $this->name     = AccountName::fromString($this->number());
         $this->balance  = new Money(0, $event->currency());
         $this->currency = $event->currency();
+        $this->register = CheckRegister::createEmpty();
     }
 
     private function onAccountWasRenamed(AccountWasRenamed $event): void
@@ -195,11 +201,15 @@ class CheckingAccount implements BankAccount, AggregateRoot
 
     private function onDepositWasMade(DepositWasMade $event): void
     {
+        $this->register->add($event->deposit());
+
         $this->balance = $this->balance->add($event->deposit()->amount());
     }
 
     private function onWithdrawalWasMade(WithdrawalWasMade $event): void
     {
+        $this->register->add($event->withdrawal());
+
         $this->balance = $this->balance->subtract($event->Withdrawal()->amount());
     }
 }
