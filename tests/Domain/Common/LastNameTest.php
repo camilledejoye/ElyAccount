@@ -2,7 +2,7 @@
 
 namespace ElyAccount\Tests\Domain\Common;
 
-use ElyAccount\Domain\Common\Exception\EmptyLastNameException;
+use ElyAccount\Domain\Common\Exception\EmptyLastName;
 use ElyAccount\Domain\Common\LastName;
 use PHPUnit\Framework\TestCase;
 
@@ -16,7 +16,7 @@ class LastNameTest extends TestCase
      */
     public function shouldNotAllowToCreateAnEmptyLastName(string $emptyLastName)
     {
-        $this->expectException(EmptyLastNameException::class);
+        $this->expectException(EmptyLastName::class);
         $this->expectExceptionMessage('A last name can\'t be empty.');
 
         LastName::fromString($emptyLastName);

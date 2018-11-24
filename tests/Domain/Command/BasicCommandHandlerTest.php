@@ -4,7 +4,7 @@ namespace ElyAccount\Tests\Domain\Command;
 
 use ElyAccount\Domain\Command\BasicCommandHandler;
 use ElyAccount\Domain\Command\Command;
-use ElyAccount\Domain\Command\Exception\InvalidCommandReceivedException;
+use ElyAccount\Domain\Command\Exception\ReceivedInvalidCommandType;
 use PHPUnit\Framework\TestCase;
 
 class BasicCommandHandlerTest extends TestCase
@@ -24,7 +24,7 @@ class BasicCommandHandlerTest extends TestCase
      */
     public function shouldRejectUnhandledCommands()
     {
-        $this->expectException(InvalidCommandReceivedException::class);
+        $this->expectException(ReceivedInvalidCommandType::class);
 
         $command = $this->getMockForAbstractClass(Command::class);
         $this->sut->handle($command);

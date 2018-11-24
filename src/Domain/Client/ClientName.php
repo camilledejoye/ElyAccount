@@ -19,8 +19,8 @@ final class ClientName implements Name
      *
      * @return self
      *
-     * @throws EmptyFirstNameException
-     * @throws EmptyLastNameException
+     * @throws EmptyFirstName
+     * @throws EmptyLastName
      */
     public static function fromStrings(string $firstName, string $lastName): self
     {

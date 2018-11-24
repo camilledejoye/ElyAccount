@@ -3,7 +3,7 @@
 namespace ElyAccount\Tests\Domain\BankAccount;
 
 use ElyAccount\Domain\BankAccount\AccountName;
-use ElyAccount\Domain\BankAccount\Exception\AccountNameException;
+use ElyAccount\Domain\BankAccount\Exception\EmptyAccountName;
 use PHPUnit\Framework\TestCase;
 
 class AccountNameTest extends TestCase
@@ -14,7 +14,7 @@ class AccountNameTest extends TestCase
      */
     public function shouldNotAcceptEmptyNames(string $consideredAsEmpty)
     {
-        $this->expectException(AccountNameException::class);
+        $this->expectException(EmptyAccountName::class);
         $this->expectExceptionMessage('An account name can not be empty.');
 
         AccountName::fromString($consideredAsEmpty);

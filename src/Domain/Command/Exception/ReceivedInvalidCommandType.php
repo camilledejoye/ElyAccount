@@ -2,17 +2,21 @@
 
 namespace ElyAccount\Domain\Command\Exception;
 
+use ElyAccount\Domain\Exception\RuntimeException;
+
 /**
  * Exception thrown when a command handler receive a command of another
  * type that the one is supposed to handle.
  *
- * @see \RuntimeException
+ * @see RuntimeException
  */
-class InvalidCommandReceivedException extends \RuntimeException
+class ReceivedInvalidCommandType extends RuntimeException
 {
-    public function __construct(string $expectedType, string $commandType)
-    {
-        parent::__construct(sprintf(
+    public static function becauseItsTheWrongCommandType(
+        string $expectedType,
+        string $commandType
+    ): self {
+        return new self(sprintf(
             'Expect to receive a "%s" but actually got "%s"',
             $expectedType,
             $commandType

@@ -3,8 +3,8 @@
 namespace ElyAccount\Tests\Domain\Client;
 
 use ElyAccount\Domain\Client\ClientName;
-use ElyAccount\Domain\Common\Exception\EmptyFirstNameException;
-use ElyAccount\Domain\Common\Exception\EmptyLastNameException;
+use ElyAccount\Domain\Common\Exception\EmptyFirstName;
+use ElyAccount\Domain\Common\Exception\EmptyLastName;
 use ElyAccount\Domain\Common\FirstName;
 use ElyAccount\Domain\Common\LastName;
 use PHPUnit\Framework\TestCase;
@@ -43,7 +43,7 @@ class ClientNameTest extends TestCase
      */
     public function shouldNotAllowedEmptyFirstName(string $emptyFirstName)
     {
-        $this->expectException(EmptyFirstNameException::class);
+        $this->expectException(EmptyFirstName::class);
 
         ClientName::fromStrings($emptyFirstName, 'not empty');
     }
@@ -54,7 +54,7 @@ class ClientNameTest extends TestCase
      */
     public function shouldNotAllowedEmptyLastName(string $emptyLastName)
     {
-        $this->expectException(EmptyLastNameException::class);
+        $this->expectException(EmptyLastName::class);
 
         ClientName::fromStrings('not empty', $emptyLastName);
     }

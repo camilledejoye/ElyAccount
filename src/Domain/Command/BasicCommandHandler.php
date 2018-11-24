@@ -2,8 +2,7 @@
 
 namespace ElyAccount\Domain\Command;
 
-use ElyAccount\Domain\Command\Exception\CommandHandlerException;
-use ElyAccount\Domain\Command\Exception\InvalidCommandReceivedException;
+use ElyAccount\Domain\Command\Exception\ReceivedInvalidCommandType;
 
 /**
  * Trait used to provide a basic implementation for CommandHanlder.
@@ -44,14 +43,14 @@ trait BasicCommandHandler
      *
      * @return void
      *
-     * @throws InvalidCommandReceivedException
+     * @throws ReceivedInvalidCommandType
      */
     protected static function assertThatACommandIsOfTheHandledType(Command $command)
     {
         $expectedType = static::getCommandHandledType();
 
         if (!($command instanceof $expectedType)) {
-            throw CommandHandlerException::becauseItReceivedAnInvalidCommandType(
+            throw ReceivedInvalidCommandType::becauseItsTheWrongCommandType(
                 $expectedType,
                 get_class($command)
             );

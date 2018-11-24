@@ -2,7 +2,7 @@
 
 namespace ElyAccount\Domain\BankAccount;
 
-use ElyAccount\Domain\BankAccount\Exception\AccountNameException;
+use ElyAccount\Domain\BankAccount\Exception\EmptyAccountName;
 
 /**
  * A name for an account.
@@ -21,7 +21,7 @@ class AccountName
      *
      * @return AccountName
      *
-     * @throws AccountNameException
+     * @throws EmptyAccountName
      */
     public static function fromString(string $name): AccountName
     {
@@ -53,12 +53,12 @@ class AccountName
      *
      * @param string $name
      *
-     * @throws AccountNameException
+     * @throws EmptyAccountName
      */
     private function __construct(string $name)
     {
         if ('' === trim($name)) {
-            throw AccountNameException::becauseAnACcountNameCantBeEmpty();
+            throw EmptyAccountName::becauseAnACcountNameCantBeEmpty();
         }
 
         $this->name = $name;

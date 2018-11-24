@@ -2,7 +2,7 @@
 
 namespace ElyAccount\Domain\Common;
 
-use ElyAccount\Domain\Common\Exception\EmptyFirstNameException;
+use ElyAccount\Domain\Common\Exception\EmptyFirstName;
 
 /**
  * Represents a first name.
@@ -23,7 +23,7 @@ final class FirstName implements Name
      *
      * @return self
      *
-     * @throws EmptyFirstNameException
+     * @throws EmptyFirstName
      */
     public static function fromString(string $firstName): self
     {
@@ -55,7 +55,7 @@ final class FirstName implements Name
      *
      * @param string $firstName
      *
-     * @throws EmptyFirstNameException
+     * @throws EmptyFirstName
      */
     private function __construct(string $firstName)
     {
@@ -69,12 +69,12 @@ final class FirstName implements Name
      *
      * @param string $firstName
      *
-     * @throws EmptyFirstNameException
+     * @throws EmptyFirstName
      */
     private static function assertThatAFirstNameIsNotEmpty(string $firstName)
     {
         if (empty($firstName)) {
-            throw EmptyFirstNameException::becauseAFirstNameCantBeEmpty();
+            throw EmptyFirstName::becauseAFirstNameCantBeEmpty();
         }
     }
 }
