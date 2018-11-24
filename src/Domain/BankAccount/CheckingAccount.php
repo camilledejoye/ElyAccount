@@ -4,6 +4,8 @@ namespace ElyAccount\Domain\BankAccount;
 
 use ElyAccount\Domain\BankAccount\Event\AccountWasRenamed;
 use ElyAccount\Domain\BankAccount\Event\CheckingAccountWasOpen;
+use ElyAccount\Domain\BankAccount\Event\DepositWasMade;
+use ElyAccount\Domain\BankAccount\Event\WithdrawalWasMade;
 use ElyAccount\Domain\BankAccount\Exception\InvalidAmountOperation;
 use ElyAccount\Domain\BankAccount\Exception\WrongCurrencyOperation;
 use Money\Currency;
@@ -75,9 +77,9 @@ class CheckingAccount implements BankAccount, AggregateRoot
     public function deposit(Money $amount): BankAccount
     {
         $this->assertThatItsTheSameCurrencyThanTheAccount($amount->getCurrency());
-        $this->assertThatAnAmountIsPositive($amount);
 
-        $this->balance = $this->balance->add($amount);
+        $deposit = Deposit::fromAmount($amount);
+        $this->recordThat(DepositWasMade::fromAmount($this->number(), $deposit));
 
         return $this;
     }
@@ -88,9 +90,9 @@ class CheckingAccount implements BankAccount, AggregateRoot
     public function withdraw(Money $amount): BankAccount
     {
         $this->assertThatItsTheSameCurrencyThanTheAccount($amount->getCurrency());
-        $this->assertThatAnAmountIsPositive($amount);
 
-        $this->balance = $this->balance->subtract($amount);
+        $withdrawal = Withdrawal::fromAmount($amount);
+        $this->recordThat(WithdrawalWasMade::fromAmount($this->number(), $withdrawal));
 
         return $this;
     }
@@ -179,22 +181,6 @@ class CheckingAccount implements BankAccount, AggregateRoot
         }
     }
 
-    /**
-     * Guards that an amount is positive.
-     *
-     * @param Money $amount
-     *
-     * @return void
-     *
-     * @throws InvalidAmountOperation
-     */
-    private function assertThatAnAmountIsPositive(Money $amount)
-    {
-        if ($amount->isNegative() || '0' === $amount->getAmount()) {
-            throw InvalidAmountOperation::becauseAnAmountMustBeGreaterThanZero($amount->getAmount());
-        }
-    }
-
     private function onCheckingAccountWasOpen(CheckingAccountWasOpen $event): void
     {
         $this->name     = AccountName::fromString($this->number());
@@ -205,5 +191,15 @@ class CheckingAccount implements BankAccount, AggregateRoot
     private function onAccountWasRenamed(AccountWasRenamed $event): void
     {
         $this->name = $event->name();
+    }
+
+    private function onDepositWasMade(DepositWasMade $event): void
+    {
+        $this->balance = $this->balance->add($event->deposit()->amount());
+    }
+
+    private function onWithdrawalWasMade(WithdrawalWasMade $event): void
+    {
+        $this->balance = $this->balance->subtract($event->Withdrawal()->amount());
     }
 }
