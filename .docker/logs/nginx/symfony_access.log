@@ -1,0 +1,6 @@
+172.18.0.1 - - [26/Nov/2018:18:07:14 +0000] "GET / HTTP/1.1" 404 27 "-" "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:63.0) Gecko/20100101 Firefox/63.0"
+172.18.0.1 - - [26/Nov/2018:18:07:14 +0000] "GET /favicon.ico HTTP/1.1" 404 27 "-" "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:63.0) Gecko/20100101 Firefox/63.0"
+172.18.0.1 - - [26/Nov/2018:18:07:16 +0000] "GET / HTTP/1.1" 404 27 "-" "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:63.0) Gecko/20100101 Firefox/63.0"
+172.18.0.1 - - [26/Nov/2018:18:07:16 +0000] "GET /favicon.ico HTTP/1.1" 404 27 "-" "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:63.0) Gecko/20100101 Firefox/63.0"
+172.18.0.1 - - [26/Nov/2018:18:07:17 +0000] "GET / HTTP/1.1" 404 27 "-" "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:63.0) Gecko/20100101 Firefox/63.0"
+172.18.0.1 - - [26/Nov/2018:18:07:17 +0000] "GET /favicon.ico HTTP/1.1" 404 27 "-" "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:63.0) Gecko/20100101 Firefox/63.0"

@@ -1,0 +1,30 @@
+version: '2'
+
+services:
+    postgres:
+        image: postgres
+        ports:
+            - 5432:5432
+        volumes:
+            - ./logs/postgresql/:/var/log/postgresql
+    
+    php:
+        build: php-fpm
+        expose:
+            - 9000
+        volumes:
+            - ../:/var/www/symfony
+            - ./logs/symfony/:/var/www/symfony/var/logs
+        links:
+            - postgres
+
+    nginx:
+        build: nginx
+        ports:
+            - 8080:80
+        links:
+            - php
+        volumes_from:
+            - php
+        volumes:
+            - ./logs/nginx/:/var/log/nginx
