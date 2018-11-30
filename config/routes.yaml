@@ -1,0 +1,3 @@
+#index:
+#    path: /
+#    controller: ElyAccount\Controller\DefaultController::index
