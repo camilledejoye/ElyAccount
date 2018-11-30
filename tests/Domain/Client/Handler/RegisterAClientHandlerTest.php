@@ -25,7 +25,7 @@ class RegisterAClientHandlerTest extends TestCase
         $command  = RegisterAClientCommand::prepare($clientId, $name);
 
         $clientRepository->expects($this->once())
-            ->method('manage')
+            ->method('save')
             ->with($this->equalTo(Client::signUp($clientId, $name)));
 
         $sut->handle($command);

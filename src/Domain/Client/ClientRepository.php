@@ -17,11 +17,11 @@ interface ClientRepository
     public function get(ClientId $id);
 
     /**
-     * Manages a new client.
+     * Save a client.
      *
      * @param Client $client
      *
      * @return static
      */
-    public function manage(Client $client);
+    public function save(Client $client);
 }

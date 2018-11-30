@@ -9,11 +9,15 @@ use ElyAccount\Domain\Client\Client;
 use ElyAccount\Domain\Command\HandlesCommand;
 use ElyAccount\Domain\Client\ClientRepository;
 
+/**
+ * Registers a client.
+ *
+ * @see HandlesCommand
+ * @final
+ */
 final class RegisterAClientHandler implements HandlesCommand
 {
     use BasicCommandHandler;
-
-    const HANDLED_COMMAND_TYPE = RegisterAClientCommand::class;
 
     /**
      * @var ClientRepository
@@ -35,10 +39,10 @@ final class RegisterAClientHandler implements HandlesCommand
      *
      * @param SignUpAClientCommand $command
      */
-    protected function doHandle(Command $command)
+    protected function doHandle(RegisterAClientCommand $command)
     {
         $client = Client::signUp($command->clientId(), $command->clientName());
-        $this->clientRepository->manage($client);
+        $this->clientRepository->save($client);
     }
 
     /**
@@ -46,6 +50,6 @@ final class RegisterAClientHandler implements HandlesCommand
      */
     protected static function getCommandHandledType(): string
     {
-        return self::HANDLED_COMMAND_TYPE;
+        return RegisterAClientCommand::class;
     }
 }
