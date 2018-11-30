@@ -4,7 +4,10 @@
         "actions": [
             {
                 "action": "\\SebastianFeldmann\\CaptainHook\\Hook\\Message\\Action\\Beams",
-                "options": []
+                "options": {
+                    "subjectLength": 50,
+                    "bodyLineLength": 72
+                }
             }
         ]
     },
@@ -20,10 +23,12 @@
                 "options": []
             },
             {
-                "action": "phpunit --colors=always"
+                "action": "phpunit --colors=always",
+                "options": []
             },
             {
-                "action": "phpcs --colors --standard=PSR2 --ignore=vendor/,var/,.git/ ."
+                "action": "phpcs --colors --standard=PSR2 --ignore=vendor/,var/,.git/ .",
+                "options": []
             }
         ]
     },
