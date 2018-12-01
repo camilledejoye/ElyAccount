@@ -1,12 +1,10 @@
 @import '~bootstrap/scss/functions';
+@import 'bootstrap/custom';
 @import '~bootstrap/scss/variables';
 @import '~bootstrap/scss/mixins';
 
-@import './bootstrap/variables';
-@import './bootstrap/dropdown';
+@import 'bootstrap/variables';
+@import 'bootstrap/dropdown';
+@import 'section';
 
 @import '~bootstrap/scss/bootstrap';
-
-body {
-    background-color: #eee;
-}

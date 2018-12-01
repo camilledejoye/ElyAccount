@@ -1,0 +1,15 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+<main class="container-fluid pt-4">
+    <div class="row">
+        <div class="col-md-2">
+            {% include 'vertical_menu.html.twig' %}
+        </div>
+
+        <section class="col-md-10">
+            {% block section_content %}{% endblock %}
+        </section>
+    </div>
+</main>
+{% endblock body %}
