@@ -1,0 +1,12 @@
+@import '~bootstrap/scss/functions';
+@import '~bootstrap/scss/variables';
+@import '~bootstrap/scss/mixins';
+
+@import './bootstrap/variables';
+@import './bootstrap/dropdown';
+
+@import '~bootstrap/scss/bootstrap';
+
+body {
+    background-color: #eee;
+}

@@ -34,6 +34,7 @@
         "symfony/twig-bundle": "4.2.*",
         "symfony/validator": "4.2.*",
         "symfony/web-link": "4.2.*",
+        "symfony/webpack-encore-bundle": "^1.0",
         "symfony/yaml": "4.2.*"
     },
     "require-dev": {
@@ -72,7 +73,7 @@
     },
     "scripts": {
         "lint": "vendor/bin/parallel-lint --colors --exclude app --exclude vendor --exclude var .",
-        "phpcs": "phpcs --colors --standard=PSR2 --ignore=vendor/,var/,.git/ .",
+        "phpcs": "phpcs --colors --standard=PSR2 --ignore=vendor/,var/,.git/,node_modules/,public/ .",
         "test": "phpunit --colors=always",
         "check": [
             "@test",

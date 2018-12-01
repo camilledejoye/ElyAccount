@@ -27,7 +27,7 @@
                 "options": []
             },
             {
-                "action": "phpcs --colors --standard=PSR2 --ignore=vendor/,var/,.git/ .",
+                "action": "phpcs --colors --standard=PSR2 --ignore=vendor/,var/,.git/,node_modules/,public/ .",
                 "options": []
             }
         ]

@@ -1,0 +1,17 @@
+// Dropdowns
+//
+// Dropdown menu container and contents.
+
+$dropdown-dark-color:               rgba($white, .5) !default;
+$dropdown-dark-bg:                  $dark !default;
+$dropdown-dark-border-color:        rgba($white, .15) !default;
+$dropdown-dark-divider-bg:          $gray-700 !default;
+$dropdown-dark-box-shadow:          0 .5rem 1rem rgba($white, .175) !default;
+
+$dropdown-dark-link-color:          rgba($white, .5) !default;
+$dropdown-dark-link-hover-color:    rgba($white, .75) !default;
+$dropdown-dark-link-hover-bg:       $gray-700 !default;
+
+$dropdown-dark-link-disabled-color: rgba($white, 0.25) !default;
+
+$dropdown-dark-header-color:        $gray-400 !default;

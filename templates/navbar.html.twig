@@ -1,0 +1,102 @@
+<nav class="navbar sticky-top navbar-expand-md navbar-dark bg-dark">
+    <a class="navbar-brand" href="{{ path('home') }}">ElyAccount</a>
+
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+        <ul class="navbar-nav mr-auto">
+
+            <li class="nav-item dropdown dropdown-dark">
+                <a class="nav-link dropdown-toggle"
+                   href="#"
+                   id="navbarAccountsDropdown"
+                   role="button"
+                   data-toggle="dropdown"
+                   aria-haspopup="true"
+                   aria-expanded="false">
+                    Accounts
+                </a>
+
+                <div class="dropdown-menu" aria-labelledby="navbarAccountsDropdown">
+                    <a class="dropdown-item" href="#">New</a>
+                    <a class="dropdown-item" href="#">List all</a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="#">An account</a>
+                    <a class="dropdown-item" href="#">Another account</a>
+                </div>
+            </li>
+
+            <li class="nav-item active">
+                <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link" href="#">Link</a>
+            </li>
+
+
+            <li class="nav-item">
+                <a class="nav-link disabled" href="#">Disabled</a>
+            </li>
+
+        </ul>
+
+        <ul class="navbar-nav">
+            {% if is_granted('USER_ROLE') %}
+            {% else %}
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Register</a>
+                </li>
+
+                <li class="nav-item dropdown dropdown-dark">
+                    <a class="nav-link dropdown-toggle"
+                       href="#"
+                       id="navbarLoginDropdown"
+                       role="button"
+                       data-toggle="dropdown"
+                       aria-toggle="true"
+                       aria-expanded="false">
+                        Log In
+                    </a>
+
+                    <form class="dropdown-menu dropdown-menu-right px-2"
+                          aria-labelledby="navbarLoginDropdown">
+                            <div class="form-group">
+                                <label for="navbarLoginForm">Login</label>
+                                <input class="form-control"
+                                       type="text"
+                                       placeholder="Login"
+                                       aria-label="Login">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="navbarPasswordForm">Password</label>
+                                <input class="form-control"
+                                       type="password"
+                                       placeholder="Password"
+                                       aria-label="Password">
+                            </div>
+
+                            <div class="form-group form-check">
+                                <input class="form-check-input"
+                                 type="checkbox"
+                                 id="loginFormRememberMe">
+                                <label class="form-check-label" for="loginFormRememberMe">
+                                    Remember Me
+                                </label>
+                            </div>
+
+                            <button class="btn btn-outline-success d-flex m-auto"
+                                    type="submit">
+                                Login
+                            </button>
+                    </form>
+                </li>
+            {% endif %}
+        </ul>
+
+    </div>
+</nav>
