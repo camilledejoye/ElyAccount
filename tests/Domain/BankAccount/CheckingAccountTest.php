@@ -1,13 +1,13 @@
 <?php
 
-namespace ElyAccount\Tests\Domain\BankAccount;
+namespace ElyAccount\Tests\BankAccount;
 
-use ElyAccount\Domain\BankAccount\AccountName;
-use ElyAccount\Domain\BankAccount\AccountNumber;
-use ElyAccount\Domain\BankAccount\CheckingAccount;
-use ElyAccount\Domain\BankAccount\Exception\InvalidAmountOperation;
-use ElyAccount\Domain\BankAccount\Exception\WrongCurrencyOperation;
-use ElyAccount\Domain\Client\ClientId;
+use ElyAccount\BankAccount\AccountName;
+use ElyAccount\BankAccount\AccountNumber;
+use ElyAccount\BankAccount\CheckingAccount;
+use ElyAccount\BankAccount\Exception\InvalidAmountOperation;
+use ElyAccount\BankAccount\Exception\WrongCurrencyOperation;
+use ElyAccount\Client\ClientId;
 use Money\Currency;
 use Money\Money;
 use PHPUnit\Framework\TestCase;

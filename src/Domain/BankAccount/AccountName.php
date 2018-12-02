@@ -1,8 +1,8 @@
 <?php
 
-namespace ElyAccount\Domain\BankAccount;
+namespace ElyAccount\BankAccount;
 
-use ElyAccount\Domain\BankAccount\Exception\EmptyAccountName;
+use ElyAccount\BankAccount\Exception\EmptyAccountName;
 
 /**
  * A name for an account.

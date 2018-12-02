@@ -1,8 +1,8 @@
 <?php
 
-namespace ElyAccount\Domain\BankAccount\Exception;
+namespace ElyAccount\BankAccount\Exception;
 
-use ElyAccount\Domain\Exception\RuntimeException;
+use ElyAccount\Exception\RuntimeException;
 use Money\Currency;
 
 /**

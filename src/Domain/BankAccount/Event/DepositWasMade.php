@@ -1,9 +1,9 @@
 <?php
 
-namespace ElyAccount\Domain\BankAccount\Event;
+namespace ElyAccount\BankAccount\Event;
 
-use ElyAccount\Domain\BankAccount\AccountNumber;
-use ElyAccount\Domain\BankAccount\Deposit;
+use ElyAccount\BankAccount\AccountNumber;
+use ElyAccount\BankAccount\Deposit;
 use ddd\Event\BasicDomainEvent;
 use ddd\Event\DomainEvent;
 

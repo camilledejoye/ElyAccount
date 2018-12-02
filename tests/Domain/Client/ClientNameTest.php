@@ -1,12 +1,12 @@
 <?php
 
-namespace ElyAccount\Tests\Domain\Client;
+namespace ElyAccount\Tests\Client;
 
-use ElyAccount\Domain\Client\ClientName;
-use ElyAccount\Domain\Common\Exception\EmptyFirstName;
-use ElyAccount\Domain\Common\Exception\EmptyLastName;
-use ElyAccount\Domain\Common\FirstName;
-use ElyAccount\Domain\Common\LastName;
+use ElyAccount\Client\ClientName;
+use ElyAccount\Common\Exception\EmptyFirstName;
+use ElyAccount\Common\Exception\EmptyLastName;
+use ElyAccount\Common\FirstName;
+use ElyAccount\Common\LastName;
 use PHPUnit\Framework\TestCase;
 
 class ClientNameTest extends TestCase

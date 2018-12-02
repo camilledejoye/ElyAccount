@@ -1,9 +1,9 @@
 <?php
 
-namespace ElyAccount\Tests\Domain\BankAccount;
+namespace ElyAccount\Tests\BankAccount;
 
-use ElyAccount\Domain\BankAccount\CheckRegister;
-use ElyAccount\Domain\BankAccount\Operation;
+use ElyAccount\BankAccount\CheckRegister;
+use ElyAccount\BankAccount\Operation;
 use PHPUnit\Framework\TestCase;
 
 class CheckRegisterTest extends TestCase

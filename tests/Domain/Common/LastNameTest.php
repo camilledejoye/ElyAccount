@@ -1,9 +1,9 @@
 <?php
 
-namespace ElyAccount\Tests\Domain\Common;
+namespace ElyAccount\Tests\Common;
 
-use ElyAccount\Domain\Common\Exception\EmptyLastName;
-use ElyAccount\Domain\Common\LastName;
+use ElyAccount\Common\Exception\EmptyLastName;
+use ElyAccount\Common\LastName;
 use PHPUnit\Framework\TestCase;
 
 class LastNameTest extends TestCase

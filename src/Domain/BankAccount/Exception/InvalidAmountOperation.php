@@ -1,8 +1,8 @@
 <?php
 
-namespace ElyAccount\Domain\BankAccount\Exception;
+namespace ElyAccount\BankAccount\Exception;
 
-use ElyAccount\Domain\Exception\DomainException;
+use ElyAccount\Exception\DomainException;
 
 /**
  * Thrown when trying to make an operation with an amount lower or equals to zero.

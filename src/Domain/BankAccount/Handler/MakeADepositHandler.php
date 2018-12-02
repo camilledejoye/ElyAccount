@@ -1,12 +1,12 @@
 <?php
 
-namespace ElyAccount\Domain\BankAccount\Handler;
+namespace ElyAccount\BankAccount\Handler;
 
-use ElyAccount\Domain\BankAccount\Command\MakeADepositCommand;
-use ElyAccount\Domain\BankAccount\Repository\BankAccountRepository;
-use ElyAccount\Domain\Command\BasicCommandHandler;
-use ElyAccount\Domain\Command\Command;
-use ElyAccount\Domain\Command\HandlesCommand;
+use ElyAccount\BankAccount\Command\MakeADepositCommand;
+use ElyAccount\BankAccount\Repository\BankAccountRepository;
+use ElyAccount\Command\BasicCommandHandler;
+use ElyAccount\Command\Command;
+use ElyAccount\Command\HandlesCommand;
 
 class MakeADepositHandler implements HandlesCommand
 {

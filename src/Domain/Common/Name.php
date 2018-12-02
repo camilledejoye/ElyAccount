@@ -1,6 +1,6 @@
 <?php
 
-namespace ElyAccount\Domain\Common;
+namespace ElyAccount\Common;
 
 interface Name
 {

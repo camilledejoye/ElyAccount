@@ -1,13 +1,13 @@
 <?php
 
-namespace ElyAccount\Tests\Domain\BankAccount\Handler;
+namespace ElyAccount\Tests\BankAccount\Handler;
 
-use ElyAccount\Domain\BankAccount\AccountNumber;
-use ElyAccount\Domain\BankAccount\CheckingAccount;
-use ElyAccount\Domain\BankAccount\Command\OpenACheckingAccountForAClientCommand;
-use ElyAccount\Domain\BankAccount\Handler\OpenACheckingAccountForAClientHandler;
-use ElyAccount\Domain\BankAccount\Repository\BankAccountRepository;
-use ElyAccount\Domain\Client\ClientId;
+use ElyAccount\BankAccount\AccountNumber;
+use ElyAccount\BankAccount\CheckingAccount;
+use ElyAccount\BankAccount\Command\OpenACheckingAccountForAClientCommand;
+use ElyAccount\BankAccount\Handler\OpenACheckingAccountForAClientHandler;
+use ElyAccount\BankAccount\Repository\BankAccountRepository;
+use ElyAccount\Client\ClientId;
 use Money\Currency;
 use PHPUnit\Framework\TestCase;
 

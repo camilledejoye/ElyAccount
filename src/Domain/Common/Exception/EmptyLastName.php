@@ -1,9 +1,9 @@
 <?php
 
-namespace ElyAccount\Domain\Common\Exception;
+namespace ElyAccount\Common\Exception;
 
-use ElyAccount\Domain\Exception\DomainException;
-use ElyAccount\Domain\Common\Exception\EmptyLastName;
+use ElyAccount\Exception\DomainException;
+use ElyAccount\Common\Exception\EmptyLastName;
 
 /**
  * Thrown when trying to create an empty last name.

@@ -1,6 +1,6 @@
 <?php
 
-namespace ElyAccount\Domain\BankAccount;
+namespace ElyAccount\BankAccount;
 
 use Money\Money;
 

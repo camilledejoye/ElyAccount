@@ -1,10 +1,10 @@
 <?php
 
-namespace ElyAccount\Tests\Domain\BankAccount\Event;
+namespace ElyAccount\Tests\BankAccount\Event;
 
-use ElyAccount\Domain\BankAccount\AccountNumber;
-use ElyAccount\Domain\BankAccount\Event\DepositWasMade;
-use ElyAccount\Domain\BankAccount\Deposit;
+use ElyAccount\BankAccount\AccountNumber;
+use ElyAccount\BankAccount\Event\DepositWasMade;
+use ElyAccount\BankAccount\Deposit;
 use PHPUnit\Framework\TestCase;
 use ReflectionClass;
 

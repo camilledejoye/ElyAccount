@@ -1,9 +1,9 @@
 <?php
 
-namespace ElyAccount\Domain\BankAccount\Command;
+namespace ElyAccount\BankAccount\Command;
 
-use ElyAccount\Domain\BankAccount\AccountNumber;
-use ElyAccount\Domain\Command\Command;
+use ElyAccount\BankAccount\AccountNumber;
+use ElyAccount\Command\Command;
 use Money\Money;
 
 /**

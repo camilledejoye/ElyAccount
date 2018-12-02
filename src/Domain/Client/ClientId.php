@@ -1,6 +1,6 @@
 <?php
 
-namespace ElyAccount\Domain\Client;
+namespace ElyAccount\Client;
 
 use ddd\Identity\Uuid;
 

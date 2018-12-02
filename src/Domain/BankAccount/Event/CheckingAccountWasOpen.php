@@ -1,9 +1,9 @@
 <?php
 
-namespace ElyAccount\Domain\BankAccount\Event;
+namespace ElyAccount\BankAccount\Event;
 
-use ElyAccount\Domain\BankAccount\AccountNumber;
-use ElyAccount\Domain\Client\ClientId;
+use ElyAccount\BankAccount\AccountNumber;
+use ElyAccount\Client\ClientId;
 use Money\Currency;
 use ddd\Event\BasicDomainEvent;
 use ddd\Event\DomainEvent;

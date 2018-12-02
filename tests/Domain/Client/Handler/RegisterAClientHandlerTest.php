@@ -1,13 +1,13 @@
 <?php
 
-namespace ElyAccount\Tests\Domain\Client\Handler;
+namespace ElyAccount\Tests\Client\Handler;
 
-use ElyAccount\Domain\Client\Command\RegisterAClientCommand;
-use ElyAccount\Domain\Client\Handler\RegisterAClientHandler;
-use ElyAccount\Domain\Client\ClientName;
-use ElyAccount\Domain\Client\ClientId;
-use ElyAccount\Domain\Client\Client;
-use ElyAccount\Domain\Client\ClientRepository;
+use ElyAccount\Client\Command\RegisterAClientCommand;
+use ElyAccount\Client\Handler\RegisterAClientHandler;
+use ElyAccount\Client\ClientName;
+use ElyAccount\Client\ClientId;
+use ElyAccount\Client\Client;
+use ElyAccount\Client\ClientRepository;
 use PHPUnit\Framework\TestCase;
 
 class RegisterAClientHandlerTest extends TestCase

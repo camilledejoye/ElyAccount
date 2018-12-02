@@ -1,10 +1,10 @@
 <?php
 
-namespace ElyAccount\Domain\Client\Command;
+namespace ElyAccount\Client\Command;
 
-use ElyAccount\Domain\Client\ClientName;
-use ElyAccount\Domain\Client\ClientId;
-use ElyAccount\Domain\Command\Command;
+use ElyAccount\Client\ClientName;
+use ElyAccount\Client\ClientId;
+use ElyAccount\Command\Command;
 
 /**
  * Commands asking to sign up a new client.

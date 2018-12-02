@@ -1,10 +1,10 @@
 <?php
 
-namespace ElyAccount\Tests\Domain\BankAccount;
+namespace ElyAccount\Tests\BankAccount;
 
 use DateTimeImmutable;
-use ElyAccount\Domain\BankAccount\BasicOperation;
-use ElyAccount\Domain\BankAccount\Exception\InvalidAmountOperation;
+use ElyAccount\BankAccount\BasicOperation;
+use ElyAccount\BankAccount\Exception\InvalidAmountOperation;
 use Money\Money;
 use PHPUnit\Framework\MockObject\MockObject;
 use PHPUnit\Framework\TestCase;

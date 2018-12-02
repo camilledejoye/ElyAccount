@@ -1,6 +1,6 @@
 <?php
 
-namespace ElyAccount\Domain\Command;
+namespace ElyAccount\Command;
 
 /**
  * Handles a command.

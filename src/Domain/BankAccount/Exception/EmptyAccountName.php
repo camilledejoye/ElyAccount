@@ -1,9 +1,9 @@
 <?php
 
-namespace ElyAccount\Domain\BankAccount\Exception;
+namespace ElyAccount\BankAccount\Exception;
 
-use ElyAccount\Domain\Exception\DomainException;
-use ElyAccount\Domain\BankAccount\Exception\EmptyAccountName;
+use ElyAccount\Exception\DomainException;
+use ElyAccount\BankAccount\Exception\EmptyAccountName;
 
 class EmptyAccountName extends DomainException
 {

@@ -1,10 +1,10 @@
 <?php
 
-namespace ElyAccount\Tests\Domain\Client\Command;
+namespace ElyAccount\Tests\Client\Command;
 
-use ElyAccount\Domain\Client\Command\RegisterAClientCommand;
-use ElyAccount\Domain\Client\ClientName;
-use ElyAccount\Domain\Client\ClientId;
+use ElyAccount\Client\Command\RegisterAClientCommand;
+use ElyAccount\Client\ClientName;
+use ElyAccount\Client\ClientId;
 use PHPUnit\Framework\TestCase;
 
 class RegisterAClientCommandTest extends TestCase

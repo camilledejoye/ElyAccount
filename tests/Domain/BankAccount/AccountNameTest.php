@@ -1,9 +1,9 @@
 <?php
 
-namespace ElyAccount\Tests\Domain\BankAccount;
+namespace ElyAccount\Tests\BankAccount;
 
-use ElyAccount\Domain\BankAccount\AccountName;
-use ElyAccount\Domain\BankAccount\Exception\EmptyAccountName;
+use ElyAccount\BankAccount\AccountName;
+use ElyAccount\BankAccount\Exception\EmptyAccountName;
 use PHPUnit\Framework\TestCase;
 
 class AccountNameTest extends TestCase

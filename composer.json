@@ -55,12 +55,14 @@
     },
     "autoload": {
         "psr-4": {
-            "ElyAccount\\": "src/"
+            "App\\": "src/",
+            "ElyAccount\\": "src/Domain/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "ElyAccount\\Tests\\": "tests/"
+            "App\\Tests\\": "tests/",
+            "ElyAccount\\Tests\\": "tests/Domain/"
         }
     },
     "replace": {

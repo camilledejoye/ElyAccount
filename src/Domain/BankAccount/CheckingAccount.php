@@ -1,14 +1,14 @@
 <?php
 
-namespace ElyAccount\Domain\BankAccount;
+namespace ElyAccount\BankAccount;
 
-use ElyAccount\Domain\BankAccount\Event\AccountWasRenamed;
-use ElyAccount\Domain\BankAccount\Event\CheckingAccountWasOpen;
-use ElyAccount\Domain\BankAccount\Event\DepositWasMade;
-use ElyAccount\Domain\BankAccount\Event\WithdrawalWasMade;
-use ElyAccount\Domain\BankAccount\Exception\InvalidAmountOperation;
-use ElyAccount\Domain\BankAccount\Exception\WrongCurrencyOperation;
-use ElyAccount\Domain\Client\ClientId;
+use ElyAccount\BankAccount\Event\AccountWasRenamed;
+use ElyAccount\BankAccount\Event\CheckingAccountWasOpen;
+use ElyAccount\BankAccount\Event\DepositWasMade;
+use ElyAccount\BankAccount\Event\WithdrawalWasMade;
+use ElyAccount\BankAccount\Exception\InvalidAmountOperation;
+use ElyAccount\BankAccount\Exception\WrongCurrencyOperation;
+use ElyAccount\Client\ClientId;
 use Money\Currency;
 use Money\Money;
 use ddd\Aggregate\AggregateRoot;

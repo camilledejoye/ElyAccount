@@ -1,9 +1,9 @@
 <?php
 
-namespace ElyAccount\Domain\Client;
+namespace ElyAccount\Client;
 
-use ElyAccount\Domain\Client\ClientId;
-use ElyAccount\Domain\Client\Client;
+use ElyAccount\Client\ClientId;
+use ElyAccount\Client\Client;
 
 interface ClientRepository
 {

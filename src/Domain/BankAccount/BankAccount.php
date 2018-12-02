@@ -1,8 +1,8 @@
 <?php
 
-namespace ElyAccount\Domain\BankAccount;
+namespace ElyAccount\BankAccount;
 
-use ElyAccount\Domain\Client\ClientId;
+use ElyAccount\Client\ClientId;
 use Money\Money;
 
 interface BankAccount

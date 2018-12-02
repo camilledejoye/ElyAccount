@@ -1,8 +1,8 @@
 <?php
 
-namespace ElyAccount\Domain\Common;
+namespace ElyAccount\Common;
 
-use ElyAccount\Domain\Common\Exception\EmptyLastName;
+use ElyAccount\Common\Exception\EmptyLastName;
 
 /**
  * Represents a last name.

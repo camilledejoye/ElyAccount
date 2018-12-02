@@ -1,9 +1,9 @@
 <?php
 
-namespace ElyAccount\Tests\Domain\Common;
+namespace ElyAccount\Tests\Common;
 
-use ElyAccount\Domain\Common\Exception\EmptyFirstName;
-use ElyAccount\Domain\Common\FirstName;
+use ElyAccount\Common\Exception\EmptyFirstName;
+use ElyAccount\Common\FirstName;
 use PHPUnit\Framework\TestCase;
 
 class FirstNameTest extends TestCase

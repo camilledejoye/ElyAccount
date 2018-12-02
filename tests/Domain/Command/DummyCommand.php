@@ -1,8 +1,8 @@
 <?php
 
-namespace ElyAccount\Tests\Domain\Command;
+namespace ElyAccount\Tests\Command;
 
-use ElyAccount\Domain\Command\Command;
+use ElyAccount\Command\Command;
 
 class DummyCommand implements Command
 {

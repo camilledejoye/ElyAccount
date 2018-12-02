@@ -1,6 +1,6 @@
 <?php
 
-namespace ElyAccount\Domain\Exception;
+namespace ElyAccount\Exception;
 
 class RuntimeException extends \RuntimeException
 {

@@ -1,11 +1,11 @@
 <?php
 
-namespace ElyAccount\Domain\Client;
+namespace ElyAccount\Client;
 
-use ElyAccount\Domain\Common\FirstName;
-use ElyAccount\Domain\Common\LastName;
-use ElyAccount\Domain\Common\Name;
-use ElyAccount\Domain\Common\PersonName;
+use ElyAccount\Common\FirstName;
+use ElyAccount\Common\LastName;
+use ElyAccount\Common\Name;
+use ElyAccount\Common\PersonName;
 
 final class ClientName implements Name
 {

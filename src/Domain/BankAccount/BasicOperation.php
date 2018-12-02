@@ -1,9 +1,9 @@
 <?php
 
-namespace ElyAccount\Domain\BankAccount;
+namespace ElyAccount\BankAccount;
 
 use DateTimeImmutable;
-use ElyAccount\Domain\BankAccount\Exception\InvalidAmountOperation;
+use ElyAccount\BankAccount\Exception\InvalidAmountOperation;
 use Money\Money;
 
 /**

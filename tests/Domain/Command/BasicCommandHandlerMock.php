@@ -1,10 +1,10 @@
 <?php
 
-namespace ElyAccount\Tests\Domain\Command;
+namespace ElyAccount\Tests\Command;
 
-use ElyAccount\Domain\Command\BasicCommandHandler;
-use ElyAccount\Domain\Command\Command;
-use ElyAccount\Domain\Command\HandlesCommand;
+use ElyAccount\Command\BasicCommandHandler;
+use ElyAccount\Command\Command;
+use ElyAccount\Command\HandlesCommand;
 
 /**
  * Creates a mock manually because PHPUnit can't handle the static call

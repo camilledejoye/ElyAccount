@@ -1,8 +1,8 @@
 <?php
 
-namespace ElyAccount\Domain\Command\Exception;
+namespace ElyAccount\Command\Exception;
 
-use ElyAccount\Domain\Exception\RuntimeException;
+use ElyAccount\Exception\RuntimeException;
 
 /**
  * Exception thrown when a command handler receive a command of another

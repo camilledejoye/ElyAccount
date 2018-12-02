@@ -1,9 +1,9 @@
 <?php
 
-namespace ElyAccount\Domain\BankAccount\Repository;
+namespace ElyAccount\BankAccount\Repository;
 
-use ElyAccount\Domain\BankAccount\AccountNumber;
-use ElyAccount\Domain\BankAccount\BankAccount;
+use ElyAccount\BankAccount\AccountNumber;
+use ElyAccount\BankAccount\BankAccount;
 
 interface BankAccountRepository
 {

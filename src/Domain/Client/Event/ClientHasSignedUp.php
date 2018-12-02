@@ -1,9 +1,9 @@
 <?php
 
-namespace ElyAccount\Domain\Client\Event;
+namespace ElyAccount\Client\Event;
 
-use ElyAccount\Domain\Client\ClientId;
-use ElyAccount\Domain\Client\ClientName;
+use ElyAccount\Client\ClientId;
+use ElyAccount\Client\ClientName;
 use ddd\Event\BasicDomainEvent;
 use ddd\Event\DomainEvent;
 

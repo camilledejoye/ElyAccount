@@ -1,8 +1,8 @@
 <?php
 
-namespace ElyAccount\Tests\Domain\BankAccount;
+namespace ElyAccount\Tests\BankAccount;
 
-use ElyAccount\Domain\BankAccount\Withdrawal;
+use ElyAccount\BankAccount\Withdrawal;
 use Money\Money;
 use PHPUnit\Framework\TestCase;
 use ReflectionClass;

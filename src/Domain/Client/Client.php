@@ -1,14 +1,14 @@
 <?php
 
-namespace ElyAccount\Domain\Client;
+namespace ElyAccount\Client;
 
-use ElyAccount\Domain\Client\Event\ClientHasSignedUp;
-use ElyAccount\Domain\Common\FirstName;
-use ElyAccount\Domain\Common\Name;
-use ElyAccount\Domain\Common\LastName;
-use ElyAccount\Domain\Common\Person;
-use ElyAccount\Domain\Client\ClientName;
-use ElyAccount\Domain\Client\ClientId;
+use ElyAccount\Client\Event\ClientHasSignedUp;
+use ElyAccount\Common\FirstName;
+use ElyAccount\Common\Name;
+use ElyAccount\Common\LastName;
+use ElyAccount\Common\Person;
+use ElyAccount\Client\ClientName;
+use ElyAccount\Client\ClientId;
 use ddd\Aggregate\AggregateRoot;
 use ddd\Aggregate\BasicAggregateRoot;
 use ddd\Event\AggregateChanges;

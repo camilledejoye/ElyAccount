@@ -1,12 +1,12 @@
 <?php
 
-namespace ElyAccount\Tests\Domain\BankAccount\Handler;
+namespace ElyAccount\Tests\BankAccount\Handler;
 
-use ElyAccount\Domain\BankAccount\AccountNumber;
-use ElyAccount\Domain\BankAccount\BankAccount;
-use ElyAccount\Domain\BankAccount\Command\MakeADepositCommand;
-use ElyAccount\Domain\BankAccount\Handler\MakeADepositHandler;
-use ElyAccount\Domain\BankAccount\Repository\BankAccountRepository;
+use ElyAccount\BankAccount\AccountNumber;
+use ElyAccount\BankAccount\BankAccount;
+use ElyAccount\BankAccount\Command\MakeADepositCommand;
+use ElyAccount\BankAccount\Handler\MakeADepositHandler;
+use ElyAccount\BankAccount\Repository\BankAccountRepository;
 use Money\Money;
 use PHPUnit\Framework\TestCase;
 

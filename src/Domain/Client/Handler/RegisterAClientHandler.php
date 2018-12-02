@@ -1,13 +1,13 @@
 <?php
 
-namespace ElyAccount\Domain\Client\Handler;
+namespace ElyAccount\Client\Handler;
 
-use ElyAccount\Domain\Client\Command\RegisterAClientCommand;
-use ElyAccount\Domain\Command\BasicCommandHandler;
-use ElyAccount\Domain\Command\Command;
-use ElyAccount\Domain\Client\Client;
-use ElyAccount\Domain\Command\HandlesCommand;
-use ElyAccount\Domain\Client\ClientRepository;
+use ElyAccount\Client\Command\RegisterAClientCommand;
+use ElyAccount\Command\BasicCommandHandler;
+use ElyAccount\Command\Command;
+use ElyAccount\Client\Client;
+use ElyAccount\Command\HandlesCommand;
+use ElyAccount\Client\ClientRepository;
 
 /**
  * Registers a client.
