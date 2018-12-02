@@ -1,0 +1,15 @@
+{% extends 'one_section_layout.html.twig' %}
+
+{% block title %}Register a client{% endblock %}
+
+{% block section_content %}
+    {% embed 'client/register_client_form.html.twig' %}
+        {% block form %}
+            {{ parent() }}
+
+            <div class="form-group">
+                <button class="btn btn-primary" type="submit">Register</button>
+            </div>
+        {% endblock %}
+    {% endembed %}
+{% endblock section_content %}
