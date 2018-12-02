@@ -64,7 +64,6 @@ class RegisterClientType extends AbstractType implements DataMapperInterface
             ClientId::fromString($this->clientIdType($inputs)->getData()),
             $this->clientNameType($inputs)->getData()
         );
-        dump($data);
     }
 
     /**
