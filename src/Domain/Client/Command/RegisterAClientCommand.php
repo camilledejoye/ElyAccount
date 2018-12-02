@@ -22,7 +22,7 @@ final class RegisterAClientCommand implements Command
     /**
      * @var ClientName
      */
-    private $name;
+    private $clientName;
 
     /**
      * Prepares the command.
