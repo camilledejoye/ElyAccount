@@ -33,7 +33,7 @@ class BasicCommandHandlerMock implements HandlesCommand
         $this->commandForwarded = $command;
     }
 
-    protected static function getCommandHandledType(): string
+    public static function getCommandHandledType(): string
     {
         return DummyCommand::class;
     }

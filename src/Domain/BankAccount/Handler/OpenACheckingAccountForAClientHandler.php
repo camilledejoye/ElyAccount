@@ -46,7 +46,7 @@ final class OpenACheckingAccountForAClientHandler implements HandlesCommand
     /**
      * {@inheritdoc}
      */
-    protected static function getCommandHandledType(): string
+    public static function getCommandHandledType(): string
     {
         return OpenACheckingAccountForAClientCommand::class;
     }

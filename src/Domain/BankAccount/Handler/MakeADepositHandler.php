@@ -43,7 +43,7 @@ class MakeADepositHandler implements HandlesCommand
     /**
      * {@inheritdoc}
      */
-    protected static function getCommandHandledType(): string
+    public static function getCommandHandledType(): string
     {
         return MakeADepositCommand::class;
     }

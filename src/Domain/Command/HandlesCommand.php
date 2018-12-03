@@ -15,4 +15,11 @@ interface HandlesCommand
      * @return void
      */
     public function handle(Command $command);
+
+    /**
+     * Gets the type of the command handled by this handler.
+     *
+     * @return string
+     */
+    public static function getCommandHandledType(): string;
 }

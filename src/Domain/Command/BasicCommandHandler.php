@@ -30,11 +30,9 @@ trait BasicCommandHandler
     abstract protected function doHandle(Command $command);
 
     /**
-     * Gets the type of the command handled by this handler.
-     *
-     * @return string
+     * {@inheritdoc}
      */
-    abstract protected static function getCommandHandledType(): string;
+    abstract public static function getCommandHandledType(): string;
 
     /**
      * Asserts that a command is of the same type as the handled command.

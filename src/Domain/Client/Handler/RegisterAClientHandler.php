@@ -48,7 +48,7 @@ final class RegisterAClientHandler implements HandlesCommand
     /**
      * {@inheritdoc}
      */
-    protected static function getCommandHandledType(): string
+    public static function getCommandHandledType(): string
     {
         return RegisterAClientCommand::class;
     }
