@@ -1,0 +1,18 @@
+framework:
+    messenger:
+        default_bus: messenger.bus.commands
+
+        # To register a handler only for a specific bus
+        # add a bus attribute to the handler's service tag (messenger.message_handler)
+        # and use the bus name as its value.
+        buses:
+            messenger.bus.commands: ~
+            messenger.bus.events: ~
+
+        transports:
+            # Uncomment the following line to enable a transport named "amqp"
+            # amqp: '%env(MESSENGER_TRANSPORT_DSN)%'
+
+        routing:
+            # Route your messages to the transports
+            # 'App\Message\YourMessage': amqp
