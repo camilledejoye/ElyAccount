@@ -12,6 +12,14 @@ services:
         autowire: true      # Automatically injects dependencies in your services.
         autoconfigure: true # Automatically registers your services as commands, event subscribers, etc.
 
+        # Auto-wiring won't work since the two buses avec the same type
+        # So you can use DependencyInjection's binding capabilities to clarify this
+        # The argument name will then determine which bus to wire
+        bind:
+            $commandBus: '@messenger.bus.commands'
+            # Uncomment when used, error as long as not used somewhere
+            # $eventBus: '@messenger.bus.events'
+
     # makes classes in src/ available to be used as services
     # this creates a service per class whose id is the fully-qualified class name
     App\:
@@ -24,5 +32,17 @@ services:
         resource: '../src/Controller'
         tags: ['controller.service_arguments']
 
-    # add more service definitions when explicit configuration is needed
-    # please note that last definitions always *replace* previous ones
+
+    ElyAccount\:
+        resource: '../src/Domain/*'
+        exclude: '../src/Domain/{Common,Command,Exception,*/Exception}'
+
+    _instanceof:
+        ElyAccount\Handler\HandlesCommand:
+            tags: [ 'domain.command_handler' ]
+
+    ElyAccount\Client\ClientRepository:
+        alias: App\Repository\ClientTestRepository
+
+    ElyAccount\BankAccount\BankAccountRepository:
+        alias: App\Repository\BankAccountTestRepository

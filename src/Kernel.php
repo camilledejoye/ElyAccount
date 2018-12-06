@@ -2,9 +2,11 @@
 
 namespace App;
 
+use App\DependencyInjection\Compiler\DomainHandlersPass;
 use Symfony\Bundle\FrameworkBundle\Kernel\MicroKernelTrait;
 use Symfony\Component\Config\Loader\LoaderInterface;
 use Symfony\Component\Config\Resource\FileResource;
+use Symfony\Component\DependencyInjection\Compiler\PassConfig;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\HttpKernel\Kernel as BaseKernel;
 use Symfony\Component\Routing\RouteCollectionBuilder;
@@ -54,5 +56,17 @@ class Kernel extends BaseKernel
         $routes->import($confDir.'/{routes}/*'.self::CONFIG_EXTS, '/', 'glob');
         $routes->import($confDir.'/{routes}/'.$this->environment.'/**/*'.self::CONFIG_EXTS, '/', 'glob');
         $routes->import($confDir.'/{routes}'.self::CONFIG_EXTS, '/', 'glob');
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    protected function build(ContainerBuilder $container)
+    {
+        $container->addCompilerPass(
+            new DomainHandlersPass(),
+            PassConfig::TYPE_BEFORE_OPTIMIZATION,
+            10 // Enough to be before the MessengerPass
+        );
     }
 }
