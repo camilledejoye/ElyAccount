@@ -1,6 +1,6 @@
 <?php
 
-namespace ElyAccount\Command\Exception;
+namespace ElyAccount\Handler\Exception;
 
 use ElyAccount\Exception\RuntimeException;
 

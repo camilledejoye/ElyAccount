@@ -2,9 +2,9 @@
 
 namespace ElyAccount\Tests\Command;
 
-use ElyAccount\Command\BasicCommandHandler;
+use ElyAccount\Handler\BasicCommandHandler;
 use ElyAccount\Command\Command;
-use ElyAccount\Command\Exception\ReceivedInvalidCommandType;
+use ElyAccount\Handler\Exception\ReceivedInvalidCommandType;
 use PHPUnit\Framework\TestCase;
 
 class BasicCommandHandlerTest extends TestCase

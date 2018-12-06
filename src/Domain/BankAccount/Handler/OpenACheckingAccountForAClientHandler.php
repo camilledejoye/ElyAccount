@@ -5,9 +5,9 @@ namespace ElyAccount\BankAccount\Handler;
 use ElyAccount\BankAccount\CheckingAccount;
 use ElyAccount\BankAccount\Command\OpenACheckingAccountForAClientCommand;
 use ElyAccount\BankAccount\Repository\BankAccountRepository;
-use ElyAccount\Command\BasicCommandHandler;
+use ElyAccount\Handler\BasicCommandHandler;
 use ElyAccount\Command\Command;
-use ElyAccount\Command\HandlesCommand;
+use ElyAccount\Handler\HandlesCommand;
 
 /**
  * Opens a new cheking account.

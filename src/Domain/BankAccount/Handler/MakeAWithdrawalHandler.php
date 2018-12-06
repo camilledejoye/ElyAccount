@@ -4,9 +4,9 @@ namespace ElyAccount\BankAccount\Handler;
 
 use ElyAccount\BankAccount\Command\MakeAWithdrawalCommand;
 use ElyAccount\BankAccount\Repository\BankAccountRepository;
-use ElyAccount\Command\BasicCommandHandler;
+use ElyAccount\Handler\BasicCommandHandler;
 use ElyAccount\Command\Command;
-use ElyAccount\Command\HandlesCommand;
+use ElyAccount\Handler\HandlesCommand;
 
 class MakeAWithdrawalHandler implements HandlesCommand
 {

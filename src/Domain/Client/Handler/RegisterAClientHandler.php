@@ -3,10 +3,10 @@
 namespace ElyAccount\Client\Handler;
 
 use ElyAccount\Client\Command\RegisterAClientCommand;
-use ElyAccount\Command\BasicCommandHandler;
+use ElyAccount\Handler\BasicCommandHandler;
 use ElyAccount\Command\Command;
 use ElyAccount\Client\Client;
-use ElyAccount\Command\HandlesCommand;
+use ElyAccount\Handler\HandlesCommand;
 use ElyAccount\Client\ClientRepository;
 
 /**

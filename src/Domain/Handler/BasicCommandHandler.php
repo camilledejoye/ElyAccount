@@ -1,8 +1,9 @@
 <?php
 
-namespace ElyAccount\Command;
+namespace ElyAccount\Handler;
 
-use ElyAccount\Command\Exception\ReceivedInvalidCommandType;
+use ElyAccount\Command\Command;
+use ElyAccount\Handler\Exception\ReceivedInvalidCommandType;
 
 /**
  * Trait used to provide a basic implementation for CommandHanlder.
