@@ -48,7 +48,7 @@
             {% if is_granted('USER_ROLE') %}
             {% else %}
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Register</a>
+                    <a class="nav-link" href="{{ path('client_register') }}">Register</a>
                 </li>
 
                 <li class="nav-item dropdown dropdown-dark">

@@ -1,6 +1,8 @@
-{% block form %}
 {{ form_start(form) }}
-    {{ form_row(form.name.first_name) }}
+    {{ form_row(form.name.first_name, {
+        'attr': { 'autofocus': true }
+    }) }}
     {{ form_row(form.name.last_name) }}
+
+    {% block buttons %}{% endblock %}
 {{ form_end(form) }}
-{% endblock %}
