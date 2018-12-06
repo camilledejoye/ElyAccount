@@ -6,7 +6,7 @@ use ElyAccount\BankAccount\AccountNumber;
 use ElyAccount\BankAccount\CheckingAccount;
 use ElyAccount\BankAccount\Command\OpenACheckingAccountForAClientCommand;
 use ElyAccount\BankAccount\Handler\OpenACheckingAccountForAClientHandler;
-use ElyAccount\BankAccount\Repository\BankAccountRepository;
+use ElyAccount\BankAccount\BankAccountRepository;
 use ElyAccount\Client\ClientId;
 use Money\Currency;
 use PHPUnit\Framework\TestCase;

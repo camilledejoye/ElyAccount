@@ -6,7 +6,7 @@ use ElyAccount\BankAccount\AccountNumber;
 use ElyAccount\BankAccount\BankAccount;
 use ElyAccount\BankAccount\Command\MakeADepositCommand;
 use ElyAccount\BankAccount\Handler\MakeADepositHandler;
-use ElyAccount\BankAccount\Repository\BankAccountRepository;
+use ElyAccount\BankAccount\BankAccountRepository;
 use Money\Money;
 use PHPUnit\Framework\TestCase;
 

@@ -4,7 +4,7 @@ namespace ElyAccount\BankAccount\Handler;
 
 use ElyAccount\BankAccount\CheckingAccount;
 use ElyAccount\BankAccount\Command\OpenACheckingAccountForAClientCommand;
-use ElyAccount\BankAccount\Repository\BankAccountRepository;
+use ElyAccount\BankAccount\BankAccountRepository;
 use ElyAccount\Handler\BasicCommandHandler;
 use ElyAccount\Command\Command;
 use ElyAccount\Handler\HandlesCommand;

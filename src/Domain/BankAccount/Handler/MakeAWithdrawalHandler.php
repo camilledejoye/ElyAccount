@@ -3,7 +3,7 @@
 namespace ElyAccount\BankAccount\Handler;
 
 use ElyAccount\BankAccount\Command\MakeAWithdrawalCommand;
-use ElyAccount\BankAccount\Repository\BankAccountRepository;
+use ElyAccount\BankAccount\BankAccountRepository;
 use ElyAccount\Handler\BasicCommandHandler;
 use ElyAccount\Command\Command;
 use ElyAccount\Handler\HandlesCommand;

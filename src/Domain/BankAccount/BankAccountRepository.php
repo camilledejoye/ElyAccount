@@ -1,6 +1,6 @@
 <?php
 
-namespace ElyAccount\BankAccount\Repository;
+namespace ElyAccount\BankAccount;
 
 use ElyAccount\BankAccount\AccountNumber;
 use ElyAccount\BankAccount\BankAccount;
