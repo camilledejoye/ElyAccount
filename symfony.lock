@@ -1,4 +1,7 @@
 {
+    "beberlei/assert": {
+        "version": "v3.1.0"
+    },
     "captainhook/captainhook": {
         "version": "2.2.0"
     },
@@ -101,6 +104,9 @@
     "jdorn/sql-formatter": {
         "version": "v1.2.17"
     },
+    "marc-mabe/php-enum": {
+        "version": "v3.0.2"
+    },
     "moneyphp/money": {
         "version": "v3.1.3"
     },
@@ -159,6 +165,21 @@
             "branch": "master",
             "version": "4.7",
             "ref": "89239f0cf2759efccc76b9944083bfcc4d180f9d"
+        }
+    },
+    "prooph/common": {
+        "version": "v4.3.0"
+    },
+    "prooph/event-store": {
+        "version": "v7.5.0"
+    },
+    "prooph/pdo-event-store": {
+        "version": "1.7",
+        "recipe": {
+            "repo": "github.com/symfony/recipes-contrib",
+            "branch": "master",
+            "version": "1.7",
+            "ref": "88c30218d5ef74ede65ae40fc8e4ec9558ec2b65"
         }
     },
     "psr/cache": {

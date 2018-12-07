@@ -15,6 +15,7 @@
         "ext-pgsql": "^7.2",
         "elythyr/ddd": "@dev",
         "moneyphp/money": "^3.1",
+        "prooph/pdo-event-store": "^1.10",
         "ramsey/uuid": "^3.8",
         "sensio/framework-extra-bundle": "^5.1",
         "symfony/asset": "4.2.*",
